@@ -1,4 +1,5 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-admin-layout',
@@ -8,4 +9,11 @@ import {ChangeDetectionStrategy, Component} from '@angular/core';
 })
 export class AdminLayoutComponent {
 
+  constructor(private router: Router) {
+  }
+
+  logout(event: MouseEvent) {
+    event.preventDefault();
+    this.router.navigate(['/admin', 'login'])
+  }
 }
